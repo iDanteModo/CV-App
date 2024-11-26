@@ -1,7 +1,7 @@
 import React , { useState } from 'react';
 
 export function MultipleInputForm() {
-    let edit = true;
+    const [editForm, setEditForm] = useState(true);
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -26,12 +26,11 @@ export function MultipleInputForm() {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(formData);
-        edit = false;
+        setEditForm(!editForm);
         
     }
-    
     return (
-        edit ? 
+        editForm ? 
         <div className='form-container'>
             <form onSubmit={handleSubmit}>
                 <div className='personalInfo-container'>
@@ -110,14 +109,50 @@ export function MultipleInputForm() {
                     value={formData.endingDate}
                     onChange={handleChange} />
                     <div className="buttons">
-                        <button type="submit">Submit</button>
-                        <button>Edit</button>
+                        <button type="submit"
+                        onClick={setEditForm}>Submit</button>
                     </div>
                 </div>
 
             </form>
         </div>
         :
-        <h1>HELLO</h1>
+        <div className='form-container'>
+            <form onSubmit={handleSubmit}>
+                <div className='personalInfo-container'>
+                    <h1>Personal Info</h1>
+                    <label htmlFor="name">Name: </label>
+                    <h3>{formData.name}</h3>
+                    <label htmlFor="email">Email: </label>
+                    <h3>{formData.email}</h3>
+                    <label htmlFor="phoneNumber">Phone Number:</label>
+                    <h3>{formData.phoneNumber}</h3>
+                </div>
+                <div className='education-container'>
+                    <h1>Personal Education</h1>
+                    <label htmlFor="schoolName">School Name:</label>
+                    <h3>{formData.schoolName}</h3>
+                    <label htmlFor="titleOfStudy">Title Of Study: </label>
+                    <h3>{formData.titleOfStudy}</h3>
+                </div>
+                <div className='practicalExperience-container'>
+                    <h1>Practical Experience: </h1>
+                    <label htmlFor="companyName">Company Name: </label>
+                    <h3>{formData.companyName}</h3>
+                    <label htmlFor="positionTitle">Position Title: </label>
+                    <h3>{formData.positionTitle}</h3>
+                    <label htmlFor="responsabilities">Responsabilities: </label>
+                    <h3>{formData.responsabilities}</h3>
+                    <label htmlFor="startingDate">Starting Date: </label>
+                    <h3>{formData.startingDate}</h3>
+                    <label htmlFor="endingDate">Ending Date: </label>
+                    <h3>{formData.endingDate}</h3>
+                    <div className="buttons">
+                        <button type='submit'>Edit</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
     )
 }
