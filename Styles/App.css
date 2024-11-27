@@ -26,6 +26,11 @@ img {
 
 /* DANTE CODE HERE -----------*/
 
+@font-face {
+  font-family: "College";
+  src: url(../src/assets/Fonts/colleges.ttf);
+}
+
 html {
   color-scheme: dark;
 }
@@ -34,13 +39,19 @@ body {
   height: 100svh;
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+#root {
+  display: flex;
+  width: 1400px;
 }
 
 .form-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 1400px;
+  width: 700px;
   gap: 20px;
   border-right: 10px white solid;
 }
@@ -71,9 +82,88 @@ h1 {
   gap: 20px;
   justify-content: center;
 }
+
 button {
   width: 100px;
   height: 30px;
   align-self: center;
 }
+
+.cv-container {
+  display: flex;
+  width: 700px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cv {
+  display: flex;
+  background-color: purple;
+  height: 1000px;
+  max-width: 700px;
+}
+
+.left {
+  border-right: 5px white solid;
+  width: 300px;
+}
+
+.cv-left {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+.name h3 {
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.name h1 {
+  font-family: "College";
+  display: flex;
+  font-size: 3rem;
+  align-self: center;
+}
+
+img {
+  height: 200px;
+}
+
+.subTitle {
+  font-size: 2rem;
+  font-family: "College";
+}
+
+.contact h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.cv-right {
+  width: 400px;
+  margin-top: 100px;
+  margin-left: 75px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 50px;
+}
+
 

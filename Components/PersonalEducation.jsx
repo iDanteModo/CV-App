@@ -1,19 +1,15 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
-export function PersonalEducation() {
+export function PersonalEducation({formData, updateFormData}) {
     const [editForm, setEditForm] = useState(true);
-    const [formData, setFormData] = useState({
-        schoolName: '',
-        titleOfStudy: '',
-    });
-    
-    const handleChange= (e) => {
-        const {name, value} = e.target;
-        setFormData(prevState  => ({
-            ...prevState,
-            [name]: value,
-        }));
-    };
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        updateFormData({
+          ...formData,
+          [name]: value,
+        });
+      };
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -29,6 +25,7 @@ export function PersonalEducation() {
             <h1>Personal Education</h1>
                 <label htmlFor="schoolName">School Name:</label>
                 <input type="text"
+                id='schoolName'
                 name='schoolName'
                 placeholder='School Name'
                 value={formData.schoolName}
@@ -36,6 +33,7 @@ export function PersonalEducation() {
                 />
                 <label htmlFor="titleOfStudy">Title Of Study: </label>
                 <input type="text"
+                id='titleOfStudy'
                 name='titleOfStudy'
                 placeholder='Title Of Study'
                 value={formData.titleOfStudy}
@@ -61,3 +59,11 @@ export function PersonalEducation() {
         </form>
     )
 }
+
+PersonalEducation.propTypes = {
+    formData: PropTypes.shape({
+        schoolName: PropTypes.string.isRequired,
+        titleOfStudy: PropTypes.string.isRequired,
+    }).isRequired,
+    updateFormData: PropTypes.func.isRequired,
+};
