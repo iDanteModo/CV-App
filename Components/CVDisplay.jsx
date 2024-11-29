@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-export function Cvdisplay({formData}) {
+export default function Cvdisplay({formData}) {
     const {personalInfo, personalEducation, practicalExperience} = formData;
     return (
         <div className="cv-container">
