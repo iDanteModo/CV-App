@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { PersonalInfo } from "./PersonalInfo";
 import { PersonalEducation } from "./PersonalEducation";
 import { PracticalExperience } from "./PracticalExperience";
-import Cvdisplay from './CvDisplay.jsx';
+import Cvdisplay from './Cvdisplay.jsx';
 
 export function MultipleInputForm() {
     const [formData, setFormData] = useState({
@@ -51,3 +51,5 @@ return (
     </>
 )
 }
+
+// comment
