@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { PersonalInfo } from "./PersonalInfo";
 import { PersonalEducation } from "./PersonalEducation";
 import { PracticalExperience } from "./PracticalExperience";
-import { CvDisplay } from './CvDisplay.jsx';
+import { Cvdisplay } from './CvDisplay.jsx';
 
 export function MultipleInputForm() {
     const [formData, setFormData] = useState({
@@ -47,7 +47,7 @@ return (
           updateFormData={(data) => updateSection('practicalExperience', data)}
         />
     </div>
-    <CvDisplay formData={formData}/>
+    <Cvdisplay formData={formData}/>
     </>
 )
 }

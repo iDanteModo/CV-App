@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-export function CvDisplay({formData}) {
+export function Cvdisplay({formData}) {
     const {personalInfo, personalEducation, practicalExperience} = formData;
     return (
         <div className="cv-container">
@@ -42,7 +42,7 @@ export function CvDisplay({formData}) {
     )
  }
 
- CvDisplay.propTypes = {
+ Cvdisplay.propTypes = {
     formData: PropTypes.shape({
         personalInfo: PropTypes.shape({
             name: PropTypes.string.isRequired,
